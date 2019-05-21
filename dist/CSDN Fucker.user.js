@@ -6,7 +6,7 @@
 // @author       おばさんは铁道を洗います
 // @match        *://blog.csdn.net/*
 // @grant        none
-// @require      https://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js
+// @require      https://cdn.jsdelivr.net/npm/jquery@3.2.1/src/core.min.js
 // ==/UserScript==
 
 (function() {
