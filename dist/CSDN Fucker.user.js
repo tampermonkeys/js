@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         CSDN Fucker
 // @namespace    https://github.com/tampermonkeys/tampermonkey/
-// @version      0.11
+// @version      0.12
 // @description  try to take over the world!
 // @author       おばさんは铁道を洗います
-// @match        *://blog.csdn.net/*
+// @match        *://*.csdn.net/*
 // @grant        none
 // ==/UserScript==
 

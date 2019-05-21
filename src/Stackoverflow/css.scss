@@ -1,0 +1,249 @@
+
+$Background	:#282a36;
+$CurrentLine	:#44475a;
+$Selection	:#44475a;
+$Foreground	:#f8f8f2;
+$Comment	:#6272a4;
+$Cyan	:#8be9fd;
+$Green	:#50fa7b;
+$Orange	:#ffb86c;
+$Pink	:#ff79c6;
+$Purple	:#bd93f9;
+$Red	:#ff5555;
+$Yellow	:#f1fa8c;
+
+$code-font:'Fira Code Retina',Consolas;
+$comm-font: 'Segoe UI', 'Microsoft YaHei UI';
+
+
+*{
+    font-family:$comm-font !important;
+    color: rgba($Foreground,.7) !important;
+    background-color: $Background 	!important;
+}
+
+
+
+
+
+
+
+#js-gdpr-consent-banner
+,#footer.site-footer
+,#post-form
+,#left-sidebar
+,#sidebar
+,.post-taglist
+,.post-taglist+.mb0
+,.post-text+.mb0
+
+,header.top-bar
+{
+    display: none !important;
+}
+
+
+
+// page width
+
+body>.container{
+    max-width: 80%;
+    #content{
+        max-width: 100%;
+        width: 100%;
+        border: none;
+    }
+}
+#mainbar, .mainbar, body{
+    h1,h2,h3{
+  
+        &,&>a
+       
+        {
+            color:  $Purple !important;
+            font-weight: 400 !important;
+      
+        }
+    }
+
+}
+
+
+.post-text{
+  
+    p{
+     
+     
+        color: rgba($Foreground,.6) !important;
+    }
+   
+
+    blockquote{
+        border-left: 5px $CurrentLine solid;
+        background-color: rgba($color:black, $alpha: 0.15) !important;
+       
+        &>p{
+            color: $Comment !important;
+            background-color: transparent !important;
+    
+            code{
+                //background-color: darken($Background,5%) !important;
+              
+                background-color: transparent !important;
+            }
+        }
+    }
+
+  
+}
+
+@mixin inline-code{
+    color: $Red !important;
+    background-color: rgba(black,0.15) !important;
+    font-family: $code-font !important;
+    font-size: 1rem !important;
+    text-shadow: 0 1px 1px rgba(black,0.15);
+    font-style: normal !important;
+}
+@mixin inline-link{
+    color: rgba($Purple,.5) !important;
+    font-style: italic !important;
+    letter-spacing:0.2px !important;
+    margin: 0 .5rem;
+    text-decoration: none !important;
+
+    border-bottom: 1px dashed rgba( $Purple,0.3);
+}
+
+.post-text{
+    p a{
+        @include inline-link();
+    }
+    &>p>code,blockquote>p>code, p a>code{
+        color: $Red !important;
+        background-color: rgba(black,0.15) !important;
+        font-family: $code-font !important;
+        font-size: 1rem !important;
+        text-shadow: 0 1px 1px rgba(black,0.15);
+        font-style: normal !important;
+    }
+    
+    &>pre{
+        background-color: rgba(black,0.15) !important;
+        &>code,&>code>span{
+            background-color: transparent !important;
+        }
+    }
+}
+
+
+
+
+code{
+
+    $code-txt:lighten( $Comment,35%);
+    background-color: transparent !important;
+    font-family: $code-font !important;
+    span.kwd {
+        color: $Purple !important;
+    }
+    span.typ{
+        color:$code-txt!important;
+    }
+    span.pun{
+        color: $code-txt  !important;
+    }
+
+    span.com{
+        color: lighten($Background,30%) !important;
+        font-family:$comm-font !important;
+        font-style: italic !important;
+
+    }
+    span.pln{
+        min-width:.5rem;
+        color:$code-txt!important;
+    }
+
+    span{
+        letter-spacing:0.2px !important;
+        text-shadow: 0 1px 1px rgba(black,0.15);
+    }
+}
+
+.post-text code,
+.wmd-preview code{
+    font-size: 1.2rem !important;
+   
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.js-comments-container{
+
+    padding-left: 5rem;
+    border: 0;
+ 
+
+ 
+    ul.comments-list{
+        display: flex !important;
+        flex-flow: column;
+        &,& *:not(code){
+            background-color: darken( $Background,3% ) !important;
+        }
+        &>li.comment{
+           display: list-item;
+            &+li{
+                border-top: 1px solid   $Background !important;
+                margin-top: .75rem;
+                padding-top: .75rem;
+            }
+            &>.comment-actions{
+                display: none;
+
+            }
+            &>.comment-text{
+               
+                border-bottom: 0;
+               
+                .comment-body{
+        
+                    &,span{
+                     color: rgba($Foreground,.5) !important;
+                     font-size: 1rem !important;
+                    } 
+                    code{
+                        @include inline-code();
+                        font-size: 1rem !important;
+                    }
+                    a{
+                     @include inline-link();
+                    }
+                 }
+
+            }
+        }
+    }
+
+  
+
+    .comment-user,.comment-date{
+        opacity: .6;
+     
+    }
+   
+ 
+
+}
